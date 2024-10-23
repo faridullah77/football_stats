@@ -1,0 +1,25 @@
+name: Football App
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: macos-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+
+            - name: Install Flutter
+              uses: subosito/flutter-action@v2
+              with:
+                flutter-version: '3.24.3'
+
+            - name: Install Dependencies
+              run: flutter pub get
+
+            - name: Build Web App
+              run: flutter build web
