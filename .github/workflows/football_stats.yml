@@ -21,5 +21,8 @@ jobs:
             - name: Install Dependencies
               run: flutter pub get
 
+            - name: Run Tests
+              run: flutter run test
+
             - name: Build Web App
               run: flutter build web
